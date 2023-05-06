@@ -1,0 +1,15 @@
+[package]
+name = "bin"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+with-kono = ["kono"]
+default = ["with-kono"]
+std = ["default"]
+
+[dependencies]
+global-id-gen-server = { path = "../service" }
+controller = { path = "../controller" }
+kono = { path = "../kono", optional = true, features = ["with-rocksdb"] }
