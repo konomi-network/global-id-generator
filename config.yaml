@@ -1,0 +1,7 @@
+increment: 1
+starting: 0
+sharding_bits: 0
+address: "0.0.0.0:8080"
+channel_size: 500
+rocksdb_path: ".rocksdb"  # if running on docker-compose or k8s, this path needs to be mounted
+rocksdb_storage_key: [0]
