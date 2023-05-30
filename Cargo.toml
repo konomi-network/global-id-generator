@@ -5,17 +5,17 @@ edition = "2021"
 
 [[bin]]
 name = "id-gen-service"
-path = "src/bin/src/main.rs"
+path = "bin/src/main.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [workspace]
 members = [
-    "src/interfaces",
-    "src/controller",
-    "src/service",
-    "src/kono",
-    "src/bin",
+    "interfaces",
+    "controller",
+    "service",
+    "kono",
+    "bin",
 ]
 
 [dependencies]
@@ -28,6 +28,6 @@ serde_yaml = "0.9.21"
 serde_json = "1.0"
 env_logger = "0.10.0"
 
-global-id-gen-server = { path = "./src/service" }
-controller = { path = "./src/controller" }
-kono = { path = "src/kono", features = ["with-rocksdb"] }
+global-id-gen-server = { path = "service" }
+controller = { path = "controller" }
+kono = { path = "kono", features = ["with-rocksdb"] }
