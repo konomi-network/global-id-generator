@@ -1,7 +1,5 @@
 use interfaces::{IdGen, Storage};
 
-extern crate test;
-
 unsafe impl<S: Storage + Send> Send for KonoIdGenerator<S> {}
 
 unsafe impl<S: Storage + Send> Sync for KonoIdGenerator<S> {}

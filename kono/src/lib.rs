@@ -1,5 +1,3 @@
-#![feature(test)]
-
 mod id;
 
 #[cfg(feature = "with-rocksdb")]
