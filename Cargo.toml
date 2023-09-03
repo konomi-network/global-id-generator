@@ -5,7 +5,7 @@ version = "0.1.0"
 edition = "2021"
 license = "Apache-2.0"
 keywords = ["global", "id", "generator"]
-homepage = "https://github.com/konomi-network/global-id-generator"
+homepage = "https://konomi.network/"
 repository = "https://github.com/konomi-network/global-id-generator"
 documentation = "https://docs.rs/global-id-generator"
 readme = "README.md"
@@ -35,6 +35,6 @@ serde_yaml = "0.9.21"
 serde_json = "1.0"
 env_logger = "0.10.0"
 
-service = { path = "service", version = "0.1.0" }
-controller = { path = "controller", version = "0.1.0" }
-kono = { path = "kono", version = "0.1.0", features = ["with-rocksdb"] }
+service = { version = "0.1.0", path = "./service" }
+controller = { version = "0.1.0", path = "./controller" }
+kono = { version = "0.1.0", path = "./kono", features = ["with-rocksdb"] }

@@ -10,6 +10,6 @@ default = ["with-kono"]
 std = ["default"]
 
 [dependencies]
-service = { path = "../service", version = "0.1.0" }
-controller = { path = "../controller", version = "0.1.0" }
-kono = { path = "../kono", version = "0.1.0", optional = true, features = ["with-rocksdb"] }
+service = { version = "0.1.0", path = "../service" }
+controller = { version = "0.1.0", path = "../controller" }
+kono = { version = "0.1.0", path = "../kono", optional = true, features = ["with-rocksdb"] }
