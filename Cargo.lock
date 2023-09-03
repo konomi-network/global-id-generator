@@ -22,8 +22,8 @@ name = "bin"
 version = "0.1.0"
 dependencies = [
  "controller",
- "global-id-gen-server",
  "kono",
+ "service",
 ]
 
 [[package]]
@@ -109,12 +109,12 @@ name = "controller"
 version = "0.1.0"
 dependencies = [
  "env_logger",
- "global-id-gen-server",
  "hyper",
  "log",
  "serde",
  "serde_json",
  "serde_yaml",
+ "service",
  "tokio",
  "url",
 ]
@@ -214,29 +214,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b"
 
 [[package]]
-name = "global-id-gen-server"
-version = "0.1.0"
-dependencies = [
- "interfaces",
- "log",
- "serde",
- "tokio",
- "url",
-]
-
-[[package]]
 name = "global-id-generator"
 version = "0.1.0"
 dependencies = [
  "controller",
  "env_logger",
- "global-id-gen-server",
  "hyper",
  "kono",
  "log",
  "serde",
  "serde_json",
  "serde_yaml",
+ "service",
  "tokio",
  "url",
 ]
@@ -739,6 +728,17 @@ dependencies = [
  "ryu",
  "serde",
  "unsafe-libyaml",
+]
+
+[[package]]
+name = "service"
+version = "0.1.0"
+dependencies = [
+ "interfaces",
+ "log",
+ "serde",
+ "tokio",
+ "url",
 ]
 
 [[package]]

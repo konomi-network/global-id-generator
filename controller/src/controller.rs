@@ -10,7 +10,7 @@ use std::task::{Context, Poll};
 use tokio::sync::{mpsc, oneshot};
 
 pub struct Svc {
-    sender: Arc<mpsc::Sender<global_id_gen_server::id::Request>>,
+    sender: Arc<mpsc::Sender<service::id::Request>>,
 }
 
 impl Service<Request<Body>> for Svc {
@@ -29,7 +29,7 @@ impl Service<Request<Body>> for Svc {
                 ("/id", &http::method::Method::POST) => {
                     if let Some((sharding_id, num)) = parse_query_str(req.uri()) {
                         let (tx, rx) = oneshot::channel();
-                        let r = global_id_gen_server::id::Request::NewKey { sharding_id, num, tx };
+                        let r = service::id::Request::NewKey { sharding_id, num, tx };
 
                         match sender.send(r).await {
                             Err(e) => {
@@ -55,11 +55,11 @@ impl Service<Request<Body>> for Svc {
 }
 
 pub struct MakeSvc {
-    sender: Arc<mpsc::Sender<global_id_gen_server::id::Request>>,
+    sender: Arc<mpsc::Sender<service::id::Request>>,
 }
 
 impl MakeSvc {
-    pub fn new(sender: Arc<mpsc::Sender<global_id_gen_server::id::Request>>) -> Self {
+    pub fn new(sender: Arc<mpsc::Sender<service::id::Request>>) -> Self {
         MakeSvc { sender }
     }
 }

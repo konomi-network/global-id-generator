@@ -10,6 +10,6 @@ default = ["with-kono"]
 std = ["default"]
 
 [dependencies]
-global-id-gen-server = { path = "../service" }
+service = { path = "../service" }
 controller = { path = "../controller", version = "0.1.0" }
 kono = { path = "../kono", version = "0.1.0", optional = true, features = ["with-rocksdb"] }

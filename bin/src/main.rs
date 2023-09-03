@@ -3,8 +3,8 @@ use std::str::FromStr;
 use std::sync::Arc;
 
 use hyper::Server;
-use global_id_gen_server::config::Config;
-use global_id_gen_server::id::IdGenerator;
+use service::config::Config;
+use service::id::IdGenerator;
 
 use controller::MakeSvc;
 
