@@ -15,4 +15,4 @@ serde_yaml = "0.9.21"
 serde_json = "1.0"
 env_logger = "0.10.0"
 
-global-id-gen-server = { path = "../service" }
+global-id-gen-server = { path = "../service", version = "0.1.0" }
